@@ -13,5 +13,5 @@ def download_from_s3(bucket_name,key_name,download_file_name):
     except botocore.exceptions.ClientError as error:
         print('Some error occurred ',error.response['Error']['Code'])
     except Exception as e:
-        print(f'Some error occurred {e}')
+        print(e)
 
