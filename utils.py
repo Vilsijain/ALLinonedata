@@ -48,7 +48,15 @@ def generate_appended_strings(word):
         response.append(i+word)
     return response
 
+def generate_replaced_strings(word):
+    final =  [char for char in word]
 
+    final = ['ee' if x=='e' else x for x in final]
+    final = ['z' if x=='s' else x for x in final]
+
+    f1 = "".join(map(str,final))
+    return  f1 
+ return result
 
 def merge_words(word1,word2):
     model = load_model()
