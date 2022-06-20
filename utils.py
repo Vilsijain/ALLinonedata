@@ -56,7 +56,7 @@ def generate_replaced_strings(word):
 
     f1 = "".join(map(str,final))
     return  f1 
- return result
+ 
 
 def merge_words(word1,word2):
     model = load_model()
