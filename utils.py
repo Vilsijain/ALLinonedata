@@ -6,6 +6,7 @@ nltk.download('omw-1.4')
 from nltk.corpus import wordnet
 import gensim
 
+
 def load_model():
     model = gensim.models.KeyedVectors.load_word2vec_format(os.getenv('DOWNLOAD_FILE_NAME'), binary=False)
     return model 
@@ -17,7 +18,7 @@ def generate_synonyms(word):
                 synonyms.append(each_lemmas.name())
             for each_synonym in synonyms: 
                 result.add(each_synonym.replace('_', ''))
-    return list(result)
+    return list(result
 
 def generate_tlds(word):
     result=[]
