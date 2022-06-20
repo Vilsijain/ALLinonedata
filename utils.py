@@ -56,6 +56,7 @@ def generate_replaced_strings(word):
 
     f1 = "".join(map(str,final))
     return  f1 
+return result
  
 
 def merge_words(word1,word2):
@@ -69,7 +70,7 @@ def merge_words(word1,word2):
         for j in random.sample(result2,3):
             response.append(i+j)
     return response
-return result
+
 
 def generate_top_10(word):
     model = load_model()
