@@ -69,6 +69,7 @@ def merge_words(word1,word2):
         for j in random.sample(result2,3):
             response.append(i+j)
     return response
+return result
 
 def generate_top_10(word):
     model = load_model()
