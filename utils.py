@@ -9,20 +9,12 @@ import gensim
 def load_model():
     model = gensim.models.KeyedVectors.load_word2vec_format(os.getenv('DOWNLOAD_FILE_NAME'), binary=False)
     return model 
-def generate_synonyms(word):
-    synonyms = []
-    result = set()
-    for syn in wordnet.synsets(word):
-            for each_lemmas in syn.lemmas():
-                synonyms.append(each_lemmas.name())
-            for each_synonym in synonyms: 
-                result.add(each_synonym.replace('_', ''))
-    return list(result)
+
                  
 def generate_tlds(word):
     result=[]
     str2 = ['.com', '.in', '.co', '.net', '.org', '.co', '.info', '.me', '.website', '.tech','.host', '.cricket']
-    for i in random.sample(str2,4):
+    for i in random.sample(str2,12):
         strres=word+i
         result.append(strres)
     return list(result)
@@ -46,16 +38,6 @@ def generate_appended_strings(word):
     for i in random.sample(result,20):
         response.append(i+word)
     return response
-
- 
-def generate_replaced_strings(word):
-    final =  [char for char in word]
-
-    final = ['ee' if x=='e' else x for x in final]
-    final = ['z' if x=='s' else x for x in final]
-
-    f1 = "".join(map(str,final))
-    return  f1 
 
 
 
