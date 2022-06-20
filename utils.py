@@ -18,7 +18,7 @@ def generate_synonyms(word):
                 synonyms.append(each_lemmas.name())
             for each_synonym in synonyms: 
                 result.add(each_synonym.replace('_', ''))
-    return list(result
+    return list(result)
 
 def generate_tlds(word):
     result=[]
