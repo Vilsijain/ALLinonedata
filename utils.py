@@ -9,8 +9,16 @@ import gensim
 def load_model():
     model = gensim.models.KeyedVectors.load_word2vec_format(os.getenv('DOWNLOAD_FILE_NAME'), binary=False)
     return model 
+def generate_synonyms(word):
+    synonyms = []
+    result = set()
+    for syn in wordnet.synsets(word):
+            for each_lemmas in syn.lemmas():
+                synonyms.append(each_lemmas.name())
+            for each_synonym in synonyms: 
+                result.add(each_synonym.replace('_', ''))
+    return list(result)
 
-                 
 def generate_tlds(word):
     result=[]
     str2 = ['.com', '.in', '.co', '.net', '.org', '.co', '.info', '.me', '.website', '.tech','.host', '.cricket']
