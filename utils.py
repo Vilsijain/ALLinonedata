@@ -1,9 +1,6 @@
 import os
 import random
 import nltk
-nltk.download("wordnet")
-nltk.download('omw-1.4')
-from nltk.corpus import wordnet
 import gensim
 
 def load_model():
@@ -46,16 +43,6 @@ def generate_appended_strings(word):
     for i in random.sample(result,20):
         response.append(i+word)
     return response
-
- 
-def generate_replaced_strings(word):
-    final =  [char for char in word]
-
-    final = ['ee' if x=='e' else x for x in final]
-    final = ['z' if x=='s' else x for x in final]
-
-    f1 = "".join(map(str,final))
-    return  f1 
 
 
 
