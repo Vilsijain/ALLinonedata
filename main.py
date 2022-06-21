@@ -5,10 +5,10 @@ from flask_cors import cross_origin
 
 from utils import (
         generate_appended_strings,
-        generate_prepended_strings
+        generate_prepended_strings,
         generate_tlds,
         merge_words,
-        generate_top_10
+        generate_top_10,
 )
 
 from aws_utils import download_from_s3
