@@ -10,7 +10,7 @@ def load_model():
 def generate_tlds(word):
     result=[]
     str2 = ['.com', '.in', '.co', '.net', '.org', '.co', '.info', '.me', '.website', '.tech','.host', '.cricket']
-    for i in random.sample(str2,4):
+    for i in random.sample(str2,12):
         strres=word+i
         result.append(strres)
     return list(result)
