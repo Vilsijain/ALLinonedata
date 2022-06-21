@@ -4,7 +4,7 @@ import nltk
 import gensim
 
 def load_model():
-    model = gensim.models.KeyedVectors.load_word2vec_format(os.getenv('DOWNLOAD_FILE_NAME'), binary=False)
+    model = gensim.models.KeyedVectors.load_word2vec_format('https://api-cosmodomain.s3.ap-south-1.amazonaws.com/pruned.word2vec.txt', binary=False)
     return model 
                  
 def generate_tlds(word):
